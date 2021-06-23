@@ -8,16 +8,14 @@ export const GifExpertApp = () => {
     "Dragon Ball",
   ]);
 
-  const handleAdd = () => {
-    setCategories((cats) => [...cats, "HunterXHunter"]);
-  };
+  // const handleAdd = () => {
+  //   setCategories((cats) => [...cats, "HunterXHunter"]);
+  // };
 
   return (
     <div>
       <h2>Gif Expert App</h2>
       <hr />
-
-      <button onClick={handleAdd}>Agregar</button>
 
       <ol>
         {categories.map((category) => {
