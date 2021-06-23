@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export const GifExpertApp = () => {
   // const categories = ["One Punch Man", "Samurai X", "Dragon Ball"];
@@ -13,9 +14,11 @@ export const GifExpertApp = () => {
   // };
 
   return (
-    <div>
+    <>
       <h2>Gif Expert App</h2>
       <hr />
+
+      <AddCategory />
 
       <ol>
         {categories.map((category) => {
@@ -24,6 +27,6 @@ export const GifExpertApp = () => {
           return <li keu={category}>{category}</li>;
         })}
       </ol>
-    </div>
+    </>
   );
 };
