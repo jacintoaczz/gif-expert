@@ -11,11 +11,11 @@ export const GifExpertApp = () => {
   // };
 
   return (
-    <>
+    <main className="container">
       <h2>Gif Expert App</h2>
       <hr />
 
-      <AddCategory setCategories={setCategories} />
+      <AddCategory setCategories={setCategories} query={categories} />
 
       <ol>
         {categories.map((category) => {
@@ -24,6 +24,6 @@ export const GifExpertApp = () => {
           return <GifGrid category={category} key={category} />;
         })}
       </ol>
-    </>
+    </main>
   );
 };
