@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const GifCard = ({ id, title, url }) => {
   return (
@@ -9,4 +10,10 @@ export const GifCard = ({ id, title, url }) => {
       </section>
     </div>
   );
+};
+
+GifCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
