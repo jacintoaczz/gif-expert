@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { getGifs } from "../helpers/giphyCalls";
+import React from "react";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifCard } from "./GifCard";
 
 export const GifGrid = ({ category }) => {
-  const [images, setImages] = useState([]);
-
-  // Si no le añadimos dependencias al useEffect (es decir, el ultimo argumento como '[]')
-  // solo se ejecutara el efecto una sola vez. Cuando se crea el componente.
-  useEffect(() => {
-    getGifs(category).then((gifs) => setImages(gifs));
-  }, [category]);
+  const { loading, data: images } = useFetchGifs(category);
 
   return (
     <>
-      <h3>{category}</h3>
+      <h3 className="animate__animated animate__fadeIn">{category}</h3>
+
+      {loading && (
+        <h4 className="animate__animated animate__flash">Cargando gifs...</h4>
+      )}
+
       <div className="gifs-container">
         {images.map((image) => {
           // Usando el {...image} es otra forma de enviar props.
