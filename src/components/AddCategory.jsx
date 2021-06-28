@@ -20,12 +20,19 @@ export const AddCategory = ({ setCategories }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder={inputValue}
-        onChange={handleInputChange}
-        autoFocus={true}
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          onChange={handleInputChange}
+          autoFocus={true}
+          required={true}
+          placeholder={" "}
+        />
+        <label htmlFor="input" className="control-label">
+          Categoría
+        </label>
+        <i className="bar"></i>
+      </div>
     </form>
   );
 };
