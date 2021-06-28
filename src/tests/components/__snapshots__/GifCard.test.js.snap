@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el </Gifcard /> Debe de mostrar el componente correctamente 1`] = `
+<div
+  className="card animate__animated animate__fadeInLeft"
+>
+  <img
+    alt="Un titulo"
+    className="gif"
+    src="https://localhost:3000/una-imagen"
+  />
+  <section
+    className="card__body"
+  >
+    <h4>
+      UN TITULO
+    </h4>
+  </section>
+</div>
+`;
