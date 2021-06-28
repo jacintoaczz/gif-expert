@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
 import { GifGrid } from "./components/GifGrid";
+import { Navbar } from "./components/Navbar";
 
 export const GifExpertApp = () => {
   // const categories = ["One Punch Man", "Samurai X", "Dragon Ball"];
@@ -11,19 +12,19 @@ export const GifExpertApp = () => {
   // };
 
   return (
-    <main className="container">
-      <h2>Gif Expert App</h2>
-      <hr />
+    <>
+      <Navbar />
+      <main className="container">
+        <AddCategory setCategories={setCategories} />
 
-      <AddCategory setCategories={setCategories} />
-
-      <ol>
-        {categories.map((category) => {
-          // No usamos el indice del elemento como 'key' dado que puede producir
-          // ciertos comportamientos no deseados si se llegan a modificar los elementos.
-          return <GifGrid category={category} key={category} />;
-        })}
-      </ol>
-    </main>
+        <ol>
+          {categories.map((category) => {
+            // No usamos el indice del elemento como 'key' dado que puede producir
+            // ciertos comportamientos no deseados si se llegan a modificar los elementos.
+            return <GifGrid category={category} key={category} />;
+          })}
+        </ol>
+      </main>
+    </>
   );
 };
